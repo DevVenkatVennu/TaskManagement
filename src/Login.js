@@ -23,7 +23,7 @@ function LoginForm() {
     );
 
     if (user) {
-      navigate('/home');
+      navigate('/my-tasks');
     } else {
       alert('Wrong credentials')
     }

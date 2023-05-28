@@ -10,7 +10,7 @@ const HomeComponent = () => {
 				<Nav className="mr-auto">
 					<Nav.Link as={Link} to="/my-tasks">Tasks</Nav.Link>
 					<Nav.Link as={Link} to="/profile">Profile</Nav.Link>
-					<Nav.Link as={Link} to="/login">Logout</Nav.Link>
+					<Nav.Link as={Link} to="/">Logout</Nav.Link>
 				</Nav>
 			</Navbar>
 		</>
