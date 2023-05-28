@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginForm from './Login';
-import Tasks from './Tasks';
-import Profile from './Profile';
+import LoginForm from './Components/Login';
+import Tasks from './Components/Tasks';
+import Profile from './Components/Profile';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

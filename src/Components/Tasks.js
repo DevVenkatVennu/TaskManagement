@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Button, Form, Modal, Container, Row, Col } from 'react-bootstrap';
+import { Card, Button, Form, Modal, Container, Row, Col, Dropdown } from 'react-bootstrap';
 import HomeComponent from './Home';
-import './App.css'
+import '../App.css';
 
 const Tasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -83,7 +83,7 @@ const Tasks = () => {
 
   return (
     <div>
-        <HomeComponent/>
+      <HomeComponent />
       <h1>Task Management</h1>
       <Button onClick={() => handleShowModal(null)}>Create Task</Button>
 
@@ -126,6 +126,32 @@ const Tasks = () => {
                 onChange={handleInputChange}
               />
             </Form.Group>
+            <Form.Group controlId="status">
+              <Form.Label>Status</Form.Label>
+              <Dropdown>
+                <Dropdown.Toggle variant="primary" id="status-dropdown">
+                  {newTask.status || 'Select Status'}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item onClick={() => setNewTask((prevState) => ({ ...prevState, status: 'New' }))}>
+                    New
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => setNewTask((prevState) => ({ ...prevState, status: 'Active' }))}>
+                    Active
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => setNewTask((prevState) => ({ ...prevState, status: 'In Progress' }))}>
+                    In Progress
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => setNewTask((prevState) => ({ ...prevState, status: 'Done' }))}>
+                    Done
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => setNewTask((prevState) => ({ ...prevState, status: 'Closed' }))}>
+                    Closed
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Form.Group>
+
 
             <Form.Group controlId="description">
               <Form.Label>Description</Form.Label>
